@@ -342,16 +342,16 @@
                     <!-- IF USER IS NOT LOGED IN AND REGISTERED-->
                     <form action="register.php" method="POST">
                     <div class="form-group">
-                    <label for="type_login">Izaberite grupu za registraciju</label>
-                    <select required id="type_login" class="form-control">
-                      <option value=""><mute>Izaberite iz liste</mute></option>
+                    <label for="type_register">Izaberite grupu za registraciju</label>
+                    <select name="type" required id="type_register" class="form-control")>
+                      <option value="">Izaberite iz liste</option>
                       <option value="attendant">Regularan korisnik</option>
                       <option value="instructor">Instruktor</option>
                       <option value="company">Kompanija</option>
                     </select>
                   </div>
 
-                  
+
                         <!-- Regular user -->
                 <div class="form-group">
                     <label for="username_register">Korisničko ime</label>
