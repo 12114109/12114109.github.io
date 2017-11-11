@@ -293,7 +293,7 @@
                    {
                    ?>
                     <!-- IF USER IS NOT LOGED IN AND REGISTERED-->
-                  
+                    <form action="index.php?link=register" method="POST">
                     <div class="form-group">
                     <label for="type_register">Izaberite grupu za registraciju</label>
                     <select name="type" required onchange="ChooseForm()" id="type_register" class="form-control")>
@@ -306,7 +306,7 @@
 
                         <!-- Regular user -->
                 <div id="regular_user_data" style="display: none;">
-                <form action="register.php" method="POST">
+
                 <div class="form-group">
                     <label for="username_register">Korisničko ime</label>
                     <input name="username" required type="text" class="form-control" id="username_register" placeholder="Unesite korisničko ime">
@@ -362,7 +362,8 @@
             <!-- Instructor user -->
 
                <div id="instructor_user_data" style="display: none;" disabled="disabled">
-                <form action="register.php" method="POST">
+                <form action="index.php?link=register" method="POST">
+                    <input type="hidden" name="type" value="instructor">
                 <div class="form-group">
                     <label for="username_register">Korisničko ime</label>
                     <input name="username" required type="text" class="form-control" id="username_register" placeholder="Unesite korisničko ime">
@@ -383,7 +384,7 @@
                  <label for="email_register">Email adresa</label>
                  <input name="email" required type="email" class="form-control" id="email_register" aria-describedby="emailHelp" placeholder="Unesite email adresu">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="firstname_register">Ime</label>
                     <input name="firstname" required type="text" class="form-control" id="firstname_register" placeholder="Unesite ime">
@@ -419,7 +420,7 @@
                             }
 
                     ?>
-                      
+
 
                     </select>
                 </div>
@@ -431,7 +432,7 @@
                 <button type="reset" class="btn btn-secondary">Resetuj</button>
              </form>
                </div>
-                  
+
 
             <!-- Instructor user -->
 
@@ -442,7 +443,8 @@
 
 
             <div id="company_user_data" style="display: none;" disabled="disabled">
-                <form action="register.php" method="POST">
+                <form action="index.php?link=register" method="POST">
+                    <input type="hidden" name="type" value="company">
                 <div class="form-group">
                     <label for="username_register">Korisničko ime</label>
                     <input name="username" required type="text" class="form-control" id="username_register" placeholder="Unesite korisničko ime kompanije">
@@ -463,7 +465,7 @@
                  <label for="email_register">Email adresa</label>
                  <input name="email" required type="email" class="form-control" id="email_register" aria-describedby="emailHelp" placeholder="Unesite email adresu kompanije">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="firstname_register">Naziv kompanije</label>
                     <input name="firstname" required type="text" class="form-control" id="firstname_register" placeholder="Unesite ime kompanije">
@@ -477,13 +479,13 @@
                 <button type="reset" class="btn btn-secondary">Resetuj</button>
           </form>
             </div>
-              
+
 
 
             <!-- Company user -->
 
 
-          
+
           
                    <?php 
                      } 
