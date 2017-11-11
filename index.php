@@ -11,6 +11,9 @@ switch ($link) {
   case "lessions":
   require("lessions.php");
   break;
+  case "profile":
+  require("profile.php");
+  break;
 default:
 require("main.php");
   break;

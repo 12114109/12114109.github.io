@@ -12,6 +12,9 @@ switch ($link) {
     case "register":
         $page_title="Registruj se";
         break;
+    case "register":
+        $page_title="Moj profil";
+        break;
     default:
         $page_title="Početna";
         break;
@@ -71,8 +74,32 @@ switch ($link) {
           Nalog
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" data-target="#loginmodal" data-toggle="modal">Prijava</a>
-          <a class="dropdown-item" data-target="#registrationmodal" data-toggle="modal" >Registracija</a>
+          <?php
+          //If user is not logged in
+          if(!isset($_SESSION))
+          {
+            ?>
+
+            <a class="dropdown-item" data-target="#loginmodal" data-toggle="modal">Prijava</a>
+            <a class="dropdown-item" data-target="#registrationmodal" data-toggle="modal" >Registracija</a>
+
+        <?php
+          }
+
+          else
+          {
+            // If user is logged in
+            ?>
+
+             <a class="dropdown-item" href="logout.php">Odjavi se</a>
+             <a class="dropdown-item" href="?link=profile" data-toggle="modal" >Moj profil</a>
+
+            <?php
+
+          }
+
+           ?>
+          
 
         </div>
       </li>

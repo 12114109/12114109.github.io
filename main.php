@@ -48,70 +48,29 @@
         <hr class="star-primary">
         <div class="row">
           <div class="col-sm-4 portfolio-item">
-            <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+
+            <?php
+
+
+
+            ?>
+            <a class="portfolio-link" href="?lessions.php?category=">
               <div class="caption">
                 <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item">
-            <a class="portfolio-link" href="#portfolioModal2" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/cake.png" alt="">
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item">
-            <a class="portfolio-link" href="#portfolioModal3" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/circus.png" alt="">
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item">
-            <a class="portfolio-link" href="#portfolioModal4" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/game.png" alt="">
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item">
-            <a class="portfolio-link" href="#portfolioModal5" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/safe.png" alt="">
-            </a>
-          </div>
-          <div class="col-sm-4 portfolio-item">
-            <a class="portfolio-link" href="#portfolioModal6" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
+                  <i class="fa fa-code fa-3x"></i>
                 </div>
               </div>
               <img class="img-fluid" src="img/portfolio/submarine.png" alt="">
             </a>
+
+
           </div>
         </div>
         <div class="text-center">
-        <h5 class="mx-auto text-center btn btn-info btn-block btn-lg">Pogledaj sve kurseve</h5>
+        <h5 class="mx-auto text-center btn btn-primary btn-block btn-lg">Pogledaj sve kurseve</h5>
       </div>
       </div>
+
     </section>
 
     <!-- About Section -->
@@ -292,12 +251,6 @@
                     <label for="password_login">Šifra</label>
                     <input name="password" required type="password" class="form-control" id="password_login" placeholder="Unesite šifru">
                 </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                    <input name="save_session" type="checkbox" class="form-check-input">
-                    Zapamti me
-                    </label>
-                </div>
                 <button type="submit" class="btn btn-primary">Prijavi se</button>
                 <button type="submit" class="btn btn-secondary">Resetuj</button>
                 </form>
@@ -340,7 +293,7 @@
                    {
                    ?>
                     <!-- IF USER IS NOT LOGED IN AND REGISTERED-->
-                    <form action="register.php" method="POST">
+                  
                     <div class="form-group">
                     <label for="type_register">Izaberite grupu za registraciju</label>
                     <select name="type" required onchange="ChooseForm()" id="type_register" class="form-control")>
@@ -353,7 +306,7 @@
 
                         <!-- Regular user -->
                 <div id="regular_user_data" style="display: none;">
-
+                <form action="register.php" method="POST">
                 <div class="form-group">
                     <label for="username_register">Korisničko ime</label>
                     <input name="username" required type="text" class="form-control" id="username_register" placeholder="Unesite korisničko ime">
@@ -398,15 +351,18 @@
                 <label for="description_register">Napišite nešto o sebi:</label>
                   <textarea name="description" class="form-control" rows="5" id="description_register"></textarea>
                 </div>
-
+                <button type="submit" class="btn btn-primary">Registruj se</button>
+                <button type="reset" class="btn btn-secondary">Resetuj</button>
+            </form>
               </div>
+
             <!-- Regular user -->
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
             <!-- Instructor user -->
 
-               <div id="instructor_user_data" style="display: none;">
-
+               <div id="instructor_user_data" style="display: none;" disabled="disabled">
+                <form action="register.php" method="POST">
                 <div class="form-group">
                     <label for="username_register">Korisničko ime</label>
                     <input name="username" required type="text" class="form-control" id="username_register" placeholder="Unesite korisničko ime">
@@ -454,8 +410,11 @@
                 <label for="description_register">Napišite nešto o sebi:</label>
                   <textarea name="description" class="form-control" rows="5" id="description_register"></textarea>
                 </div>
-
+                <button type="submit" class="btn btn-primary">Registruj se</button>
+                <button type="reset" class="btn btn-secondary">Resetuj</button>
+             </form>
                </div>
+                  
 
             <!-- Instructor user -->
 
@@ -465,8 +424,8 @@
             <!-- Company user -->
 
 
-            <div id="company_user_data" style="display: none;">
-
+            <div id="company_user_data" style="display: none;" disabled="disabled">
+                <form action="register.php" method="POST">
                 <div class="form-group">
                     <label for="username_register">Korisničko ime</label>
                     <input name="username" required type="text" class="form-control" id="username_register" placeholder="Unesite korisničko ime kompanije">
@@ -497,17 +456,18 @@
                 <label for="description_register">Napišite nešto o kompaniji:</label>
                   <textarea name="description" class="form-control" rows="5" id="description_register"></textarea>
                 </div>
-
+                      <button type="submit" class="btn btn-primary">Registruj se</button>
+                <button type="reset" class="btn btn-secondary">Resetuj</button>
+          </form>
             </div>
+              
 
 
             <!-- Company user -->
 
 
-                <button type="submit" class="btn btn-primary">Registruj se</button>
-                <button type="reset" class="btn btn-secondary">Resetuj</button>
-                </form>
-
+          
+          
                    <?php 
                      } 
                    ?>
