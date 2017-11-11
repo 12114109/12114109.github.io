@@ -277,7 +277,7 @@
                     <form action="login.php" method="POST">
                     <div class="form-group">
                     <label for="type_login">Izaberite grupu za prijavu</label>
-                    <select required id="type_login" class="form-control">
+                    <select required id="type_login" class="form-control" onchange="ChooseForm()">
                       <option value=""><mute>Izaberite iz liste</mute></option>
                       <option value="attendant">Regularan korisnik</option>
                       <option value="instructor">Instruktor</option>
@@ -343,15 +343,16 @@
                     <form action="register.php" method="POST">
                     <div class="form-group">
                     <label for="type_register">Izaberite grupu za registraciju</label>
-                    <select name="type" required id="type_register" class="form-control")>
+                    <select name="type" required onchange="ChooseForm()" id="type_register" class="form-control")>
                       <option value="">Izaberite iz liste</option>
                       <option value="attendant">Regularan korisnik</option>
-                      <option value="instructor">Instruktor</option>
+                      <option value="instructor">Predavač</option>
                       <option value="company">Kompanija</option>
                     </select>
                   </div>
 
 
+                <div id="regular_user_data" style="display: none;">
                         <!-- Regular user -->
                 <div class="form-group">
                     <label for="username_register">Korisničko ime</label>
@@ -373,8 +374,6 @@
                  <label for="email_register">Email adresa</label>
                  <input name="email" required type="email" class="form-control" id="email_register" aria-describedby="emailHelp" placeholder="Unesite email adresu">
                 </div>
-
-
                 
                 <div class="form-group">
                     <label for="firstname_register">Ime</label>
@@ -385,11 +384,9 @@
                     <label for="lastname_register">Prezime</label>
                     <input name="lastname" required type="text" class="form-control" id="lastname_register" placeholder="Unesite prezime">
                 </div>
+              </div>
 
-                <div class="form-group">
-                    <label for="birthday_register">Izaberite datum rođenja</label>
-                    <input name="birthday" required type="date" class="form-control" id="birthday_register" placeholder="Izaberite datum rođenja">
-                </div>
+
             <!-- Regular user -->
 
                 <button type="submit" class="btn btn-primary">Registruj se</button>
