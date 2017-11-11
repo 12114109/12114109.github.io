@@ -80,8 +80,8 @@ switch ($link) {
           {
             ?>
 
-            <a class="dropdown-item" data-target="#loginmodal" data-toggle="modal">Prijava</a>
-            <a class="dropdown-item" data-target="#registrationmodal" data-toggle="modal" >Registracija</a>
+            <a style="cursor: pointer; " class="dropdown-item login_button_modal" data-target="#loginmodal" data-toggle="modal">Prijava</a>
+            <a style="cursor: pointer; " class="dropdown-item register_button_modal" data-target="#registrationmodal" data-toggle="modal" >Registracija</a>
 
         <?php
           }
