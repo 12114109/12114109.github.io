@@ -66,7 +66,16 @@ switch ($link) {
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
             </li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#loginorregistermodal">Prijava/Registracija</a> </li>
+            <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Nalog
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" data-target="#loginmodal" data-toggle="modal">Prijava</a>
+          <a class="dropdown-item" data-target="#registrationmodal" data-toggle="modal" >Registracija</a>
+
+        </div>
+      </li>
           </ul>
         </div>
       </div>

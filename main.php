@@ -255,7 +255,7 @@
     </div>
 
     <!-- Login Modal -->
-    <div class="portfolio-modal modal fade" id="loginorregistermodal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="close-modal" data-dismiss="modal">
@@ -267,27 +267,144 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <h2>Login/Registracija</h2>
+                  <h2>Prijava</h2>
                   <hr class="star-primary">
                    <?php
-                   if(isset($_SESSION))
+                   if(!isset($_SESSION))
                    {
                    ?>
                     <!-- IF USER IS NOT LOGED IN -->
+                    <form action="login.php" method="POST">
+                    <div class="form-group">
+                    <label for="type_login">Izaberite grupu za prijavu</label>
+                    <select required id="type_login" class="form-control">
+                      <option value=""><mute>Izaberite iz liste</mute></option>
+                      <option value="attendant">Regularan korisnik</option>
+                      <option value="instructor">Instruktor</option>
+                      <option value="company">Kompanija</option>
+                    </select>
+                  </div>
+                <div class="form-group">
+                 <label for="email_login">Email adresa</label>
+                 <input name="email" required type="email" class="form-control" id="email_login" aria-describedby="emailHelp" placeholder="Unesite email adresu">
+                </div>
+                <div class="form-group">
+                    <label for="password_login">Šifra</label>
+                    <input name="password" required type="password" class="form-control" id="password_login" placeholder="Unesite šifru">
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                    <input name="save_session" type="checkbox" class="form-check-input">
+                    Zapamti me
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Prijavi se</button>
+                <button type="submit" class="btn btn-secondary">Resetuj</button>
+                </form>
 
-                    <!-- IF USER IS NOT LOGED IN -->
                    <?php 
                      } 
-                  else
-                   {
-                    ?>
-
-                 <?php
-                   }
                    ?>
+                   <br>
+                   <br>
+                   <br>
                   <button class="btn btn-success" type="button" data-dismiss="modal">
                     <i class="fa fa-times"></i>
-                    Close</button>
+                    Otkaži prijavu</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Registration Modal -->
+    <div class="portfolio-modal modal fade" id="registrationmodal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <h2>Registracija</h2>
+                  <hr class="star-primary">
+                   <?php
+                   if(!isset($_SESSION))
+                   {
+                   ?>
+                    <!-- IF USER IS NOT LOGED IN AND REGISTERED-->
+                    <form action="register.php" method="POST">
+                    <div class="form-group">
+                    <label for="type_login">Izaberite grupu za registraciju</label>
+                    <select required id="type_login" class="form-control">
+                      <option value=""><mute>Izaberite iz liste</mute></option>
+                      <option value="attendant">Regularan korisnik</option>
+                      <option value="instructor">Instruktor</option>
+                      <option value="company">Kompanija</option>
+                    </select>
+                  </div>
+
+                  
+                        <!-- Regular user -->
+                <div class="form-group">
+                    <label for="username_register">Korisničko ime</label>
+                    <input name="username" required type="text" class="form-control" id="username_register" placeholder="Unesite korisničko ime">
+                </div>
+
+                <div class="form-group">
+                    <label for="password_register">Šifra</label>
+                    <input name="password_once" required type="password" class="form-control" id="password_register" placeholder="Unesite šifru">
+                </div>
+
+                <div class="form-group">
+                    <label for="password_register">Ponovite šifru</label>
+                    <input name="passwor_twice" required type="password" class="form-control" id="password_register" placeholder="Ponovite šifru">
+                </div>
+
+
+                <div class="form-group">
+                 <label for="email_register">Email adresa</label>
+                 <input name="email" required type="email" class="form-control" id="email_register" aria-describedby="emailHelp" placeholder="Unesite email adresu">
+                </div>
+
+
+                
+                <div class="form-group">
+                    <label for="firstname_register">Ime</label>
+                    <input name="firstname" required type="text" class="form-control" id="firstname_register" placeholder="Unesite ime">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname_register">Prezime</label>
+                    <input name="lastname" required type="text" class="form-control" id="lastname_register" placeholder="Unesite prezime">
+                </div>
+
+                <div class="form-group">
+                    <label for="birthday_register">Izaberite datum rođenja</label>
+                    <input name="birthday" required type="date" class="form-control" id="birthday_register" placeholder="Izaberite datum rođenja">
+                </div>
+            <!-- Regular user -->
+
+                <button type="submit" class="btn btn-primary">Registruj se</button>
+                <button type="submit" class="btn btn-secondary">Resetuj</button>
+                </form>
+
+                   <?php 
+                     } 
+                   ?>
+                   <br>
+                   <br>
+                   <br>
+                  <button class="btn btn-success" type="button" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Otkaži registraciju</button>
                 </div>
               </div>
             </div>
