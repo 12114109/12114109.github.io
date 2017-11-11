@@ -3,7 +3,7 @@
 
 
 <?php
-
+define("SECRET","@7sfekjsdngjkfshsgj#GFJHddsgjfshjkfhjk!");
 $link = "";
 if(isset($_GET['link']))
     $link = $_GET['link'];

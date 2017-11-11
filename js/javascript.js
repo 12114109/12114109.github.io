@@ -21,7 +21,8 @@
         	document.getElementById("instructor_user_data").style.display="none";
         	document.getElementById("company_user_data").style.display="block";
         }
-        else
+
+        if(selectedOption=='')
         {
 			document.getElementById("regular_user_data").style.display="none";
         	document.getElementById("instructor_user_data").style.display="none";

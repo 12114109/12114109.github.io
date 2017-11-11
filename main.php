@@ -351,9 +351,9 @@
                     </select>
                   </div>
 
-
-                <div id="regular_user_data" style="display: none;">
                         <!-- Regular user -->
+                <div id="regular_user_data" style="display: none;">
+
                 <div class="form-group">
                     <label for="username_register">Korisničko ime</label>
                     <input name="username" required type="text" class="form-control" id="username_register" placeholder="Unesite korisničko ime">
@@ -391,19 +391,121 @@
                       <option value="">Izaberite iz liste</option>
                       <option value="student">Student</option>
                       <option value="employed">Zaposlen</option>
-                      <option value="other">Ništa od navedenog</option>
+                      <option value="unemployed">Nezaposlen</option>
                     </select>
                   </div>
-
-
+                  <div class="form-group">
+                <label for="description_register">Napišite nešto o sebi:</label>
+                  <textarea name="description" class="form-control" rows="5" id="description_register"></textarea>
+                </div>
 
               </div>
-
-
             <!-- Regular user -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <!-- Instructor user -->
+
+               <div id="instructor_user_data" style="display: none;">
+
+                <div class="form-group">
+                    <label for="username_register">Korisničko ime</label>
+                    <input name="username" required type="text" class="form-control" id="username_register" placeholder="Unesite korisničko ime">
+                </div>
+
+                <div class="form-group">
+                    <label for="password_register">Šifra</label>
+                    <input name="password_once" required type="password" class="form-control" id="password_register" placeholder="Unesite šifru">
+                </div>
+
+                <div class="form-group">
+                    <label for="password_register">Ponovite šifru</label>
+                    <input name="password_twice" required type="password" class="form-control" id="password_register" placeholder="Ponovite šifru">
+                </div>
+
+
+                <div class="form-group">
+                 <label for="email_register">Email adresa</label>
+                 <input name="email" required type="email" class="form-control" id="email_register" aria-describedby="emailHelp" placeholder="Unesite email adresu">
+                </div>
+                
+                <div class="form-group">
+                    <label for="firstname_register">Ime</label>
+                    <input name="firstname" required type="text" class="form-control" id="firstname_register" placeholder="Unesite ime">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname_register">Prezime</label>
+                    <input name="lastname" required type="text" class="form-control" id="lastname_register" placeholder="Unesite prezime">
+                </div>
+
+                <div class="form-group">
+                    <label for="company_register">Izaberite kompaniju u kojoj ste zaposleni</label>
+                    <select name="company" required  id="company_register" class="form-control")>
+                      <option value="">Izaberite iz liste</option>
+                      <option value="1">Firma 1</option>
+                      <option value="2">Firma 2</option>
+                      <option value="3">Firma 3</option>
+                      <option value="4">Firma 4</option>
+                      <!-- TODO: Popic da izlista kompanije iz baze i prikaze ih u ovom selektu -->
+
+                    </select>
+                </div>
+                  <div class="form-group">
+                <label for="description_register">Napišite nešto o sebi:</label>
+                  <textarea name="description" class="form-control" rows="5" id="description_register"></textarea>
+                </div>
+
+               </div>
+
+            <!-- Instructor user -->
+
+
+            <!-- ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <!-- Company user -->
+
+
+            <div id="company_user_data" style="display: none;">
+
+                <div class="form-group">
+                    <label for="username_register">Korisničko ime</label>
+                    <input name="username" required type="text" class="form-control" id="username_register" placeholder="Unesite korisničko ime kompanije">
+                </div>
+
+                <div class="form-group">
+                    <label for="password_register">Šifra</label>
+                    <input name="password_once" required type="password" class="form-control" id="password_register" placeholder="Unesite šifru">
+                </div>
+
+                <div class="form-group">
+                    <label for="password_register">Ponovite šifru</label>
+                    <input name="password_twice" required type="password" class="form-control" id="password_register" placeholder="Ponovite šifru">
+                </div>
+
+
+                <div class="form-group">
+                 <label for="email_register">Email adresa</label>
+                 <input name="email" required type="email" class="form-control" id="email_register" aria-describedby="emailHelp" placeholder="Unesite email adresu kompanije">
+                </div>
+                
+                <div class="form-group">
+                    <label for="firstname_register">Naziv kompanije</label>
+                    <input name="firstname" required type="text" class="form-control" id="firstname_register" placeholder="Unesite ime kompanije">
+                </div>
+
+                  <div class="form-group">
+                <label for="description_register">Napišite nešto o kompaniji:</label>
+                  <textarea name="description" class="form-control" rows="5" id="description_register"></textarea>
+                </div>
+
+            </div>
+
+
+            <!-- Company user -->
+
 
                 <button type="submit" class="btn btn-primary">Registruj se</button>
-                <button type="submit" class="btn btn-secondary">Resetuj</button>
+                <button type="reset" class="btn btn-secondary">Resetuj</button>
                 </form>
 
                    <?php 
