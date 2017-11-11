@@ -44,30 +44,65 @@
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
       <div class="container">
-        <h2 class="text-center">Popularni kursevi</h2>
+        <h2 class="text-center">Popularna predavanja</h2>
         <hr class="star-primary">
         <div class="row">
-          <div class="col-sm-4 portfolio-item">
+         
 
             <?php
+            require ("db_config.php");
+            $query_popular_category = "SELECT DISTINCT(name),id_category,logo FROM category LIMIT 6 ";
+
+            $result_popular_category = mysqli_query($connection,$query_popular_category);
+
+            if(!$result_popular_category)
+            {
+              echo "<h4>DB error, please try again later</h4>";
+            }
+            else
+            {
+              foreach ($result_popular_category as $row) {
+                
+                $id_category = $row['id_category'];
+                $category_name = $row['name'];
+                $category_logo = $row['logo'];
+                if($category_logo=="")
+                {
+                  $category_logo = "img/category_logo/default.jpg";
+                }
 
 
+                echo '
 
-            ?>
-            <a class="portfolio-link" href="?lessions.php?category=">
+                 <div class="col-sm-4 portfolio-item">
+                <a class="portfolio-link" href="?lessions.php?category='.$id_category.'">
               <div class="caption">
                 <div class="caption-content">
+                  <h5 style="clear-text">'.$category_name.'</h5>
                   <i class="fa fa-code fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="img/portfolio/submarine.png" alt="">
+              <img class="img-fluid" src="'.$category_logo.'" alt="">
             </a>
+                </div>
 
 
-          </div>
+                ';
+
+
+
+              }
+            }
+
+
+            ?>
+            
+
+
+      
         </div>
         <div class="text-center">
-        <h5 class="mx-auto text-center btn btn-primary btn-block btn-lg">Pogledaj sve kurseve</h5>
+        <a href="index?link=lessions" class="mx-auto text-center btn btn-primary btn-block btn-lg">Pogledaj sva predavanja</a>
       </div>
       </div>
 

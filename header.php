@@ -4,7 +4,7 @@ if(isset($_GET['link']))
     $link = $_GET['link'];
 switch ($link) {
     case "lessions":
-        $page_title="Svi kursevi";
+        $page_title="Sva predavanja";
         break;
     case "login":
         $page_title="Uloguj se";
@@ -61,7 +61,7 @@ switch ($link) {
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Popularni kursevi</a>
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Popularna predavanja</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">O nama</a>
