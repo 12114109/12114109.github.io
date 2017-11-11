@@ -70,7 +70,7 @@ switch ($link) {
               <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
             </li>
             <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Nalog
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

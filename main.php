@@ -397,12 +397,29 @@
                 <div class="form-group">
                     <label for="company_register">Izaberite kompaniju u kojoj ste zaposleni</label>
                     <select name="company" required  id="company_register" class="form-control")>
-                      <option value="">Izaberite iz liste</option>
-                      <option value="1">Firma 1</option>
-                      <option value="2">Firma 2</option>
-                      <option value="3">Firma 3</option>
-                      <option value="4">Firma 4</option>
-                      <!-- TODO: Popic da izlista kompanije iz baze i prikaze ih u ovom selektu -->
+                      <option selected="" value="">Izaberite iz liste</option>
+                  <?php
+                            require "db_config.php";
+                            $query = "SELECT id_company,name FROM company WHERE active=1";
+                            $result = mysqli_query($connection, $query);
+
+                            if (!$result)
+                            {
+                            echo '<option>DB error</option>';
+                            }
+                            else
+                            {
+                            foreach ($result as $row)
+                            {
+                            $rowid = $row['id_company'];
+                            $rowname = $row['name'];
+                            echo "<option value='".$rowid."'>".$rowname."</option>";
+
+                            }
+                            }
+
+                    ?>
+                      
 
                     </select>
                 </div>
