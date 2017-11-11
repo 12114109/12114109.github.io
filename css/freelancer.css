@@ -448,3 +448,8 @@ footer {
 .btn:active,
 .btn:focus {
   outline: none; }
+
+.clear-text{
+  color: #fff;
+  text-shadow: 1.5px 0 0 #000, 0 -1.5px 0 #000, 0 1.5px 0 #000, -1.5px 0 0 #000;
+}
