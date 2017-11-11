@@ -277,7 +277,7 @@
                     <form action="login.php" method="POST">
                     <div class="form-group">
                     <label for="type_login">Izaberite grupu za prijavu</label>
-                    <select required id="type_login" class="form-control" onchange="ChooseForm()">
+                    <select required id="type_login" class="form-control">
                       <option value=""><mute>Izaberite iz liste</mute></option>
                       <option value="attendant">Regularan korisnik</option>
                       <option value="instructor">Instruktor</option>
@@ -366,7 +366,7 @@
 
                 <div class="form-group">
                     <label for="password_register">Ponovite šifru</label>
-                    <input name="passwor_twice" required type="password" class="form-control" id="password_register" placeholder="Ponovite šifru">
+                    <input name="password_twice" required type="password" class="form-control" id="password_register" placeholder="Ponovite šifru">
                 </div>
 
 
@@ -384,6 +384,19 @@
                     <label for="lastname_register">Prezime</label>
                     <input name="lastname" required type="text" class="form-control" id="lastname_register" placeholder="Unesite prezime">
                 </div>
+
+                <div class="form-group">
+                    <label for="status_register">Izaberite vaše zanimanje</label>
+                    <select name="status" required  id="status_register" class="form-control")>
+                      <option value="">Izaberite iz liste</option>
+                      <option value="student">Student</option>
+                      <option value="employed">Zaposlen</option>
+                      <option value="other">Ništa od navedenog</option>
+                    </select>
+                  </div>
+
+
+
               </div>
 
 
