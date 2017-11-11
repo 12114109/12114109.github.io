@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $link = "";
 if(isset($_GET['link']))
     $link = $_GET['link'];
@@ -12,7 +14,7 @@ switch ($link) {
     case "register":
         $page_title="Registruj se";
         break;
-    case "register":
+    case "profile":
         $page_title="Moj profil";
         break;
     default:
@@ -76,7 +78,7 @@ switch ($link) {
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <?php
           //If user is not logged in
-          if(!isset($_SESSION))
+          if(!isset($_SESSION['id_user']))
           {
             ?>
 
@@ -92,7 +94,7 @@ switch ($link) {
             ?>
 
              <a class="dropdown-item" href="logout.php">Odjavi se</a>
-             <a class="dropdown-item" href="?link=profile" data-toggle="modal" >Moj profil</a>
+             <a class="dropdown-item" href="index.php?link=profile">Moj profil</a>
 
             <?php
 
@@ -107,3 +109,4 @@ switch ($link) {
         </div>
       </div>
     </nav>
+

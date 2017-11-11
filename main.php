@@ -264,14 +264,14 @@
                   <h2>Prijava</h2>
                   <hr class="star-primary">
                    <?php
-                   if(!isset($_SESSION))
+                   if(!isset($_SESSION['id_user']))
                    {
                    ?>
                     <!-- IF USER IS NOT LOGED IN -->
-                    <form action="login.php" method="POST">
+                    <form action="index.php?link=login" method="POST">
                     <div class="form-group">
                     <label for="type_login">Izaberite grupu za prijavu</label>
-                    <select required id="type_login" class="form-control">
+                    <select name="type" required id="type_login" class="form-control">
                       <option value=""><mute>Izaberite iz liste</mute></option>
                       <option value="attendant">Regularan korisnik</option>
                       <option value="instructor">Instruktor</option>
@@ -324,7 +324,7 @@
                   <h2>Registracija</h2>
                   <hr class="star-primary">
                    <?php
-                   if(!isset($_SESSION))
+                   if(!isset($_SESSION['id_user']))
                    {
                    ?>
                     <!-- IF USER IS NOT LOGED IN AND REGISTERED-->

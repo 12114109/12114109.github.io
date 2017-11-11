@@ -1,9 +1,30 @@
 <?php
+session_start();
+require("db_config.php");
+require("functions.php");
+
+$username = '';
+$password = '';
+$type = '';
 
 if(isset($_POST['username']))
-    echo "I received it";
-echo 'ndsnnds';
-//var_dump($_POST);
-//var_dump($_SERVER['REQUEST_METHOD']);
-/*
-echo $_POST['username']." je ".$_POST['password'];*/
+    $username = mysqli_real_escape_string($connection,trim($_POST["username"]));
+
+if(isset($_POST['password']))
+    $password = mysqli_real_escape_string($connection,trim($_POST["password"]));
+
+if(isset($_POST['type']))
+    $type = mysqli_real_escape_string($connection,trim($_POST["type"]));
+
+$id_user = check_login_user($username,$type,$password);
+
+if(is_numeric($id_user))
+{
+    $_SESSION['id_user'] = $id_user;
+    $_SESSION['username'] = $username;
+    header("Location:index.php");
+    exit();
+}
+else
+    header("Location:index.php?error=nouser");
+?>

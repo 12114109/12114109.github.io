@@ -25,3 +25,26 @@ function create_code($length)
     }
     return $code;
 }
+
+function check_login_user($username,$type,$password)
+{
+    $SALT1 = "skjdghjdhskdgsshkgdhkgdkj";
+    $SALT2 = "isdjghgsjdk8795njrgh9734h";
+
+    global $connection;
+    $password_temp = $SALT1.$password.$SALT2;
+    $id_user = false;
+
+    $sql = "SELECT id_$type FROM $type
+            WHERE username = '$username' AND password = MD5('$password_temp') AND active=1";
+
+
+    $result = mysqli_query($connection,$sql) or die(mysqli_error($connection));
+
+    if (mysqli_num_rows($result)>0) {
+        while($record = mysqli_fetch_array($result,MYSQLI_ASSOC))
+            $id_user = $record['id_'.$type];
+    }
+
+    return $id_user;
+}
