@@ -244,8 +244,8 @@
                     </select>
                   </div>
                 <div class="form-group">
-                 <label for="email_login">Email adresa</label>
-                 <input name="email" required type="email" class="form-control" id="email_login" aria-describedby="emailHelp" placeholder="Unesite email adresu">
+                 <label for="username_login">Email adresa</label>
+                 <input name="username" required type="text" class="form-control" id="email_login" aria-describedby="emailHelp" placeholder="Unesite korisničko ime">
                 </div>
                 <div class="form-group">
                     <label for="password_login">Šifra</label>
