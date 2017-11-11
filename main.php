@@ -279,7 +279,7 @@
                     </select>
                   </div>
                 <div class="form-group">
-                 <label for="username_login">Email adresa</label>
+                 <label for="username_login">Korisničko ime</label>
                  <input name="username" required type="text" class="form-control" id="email_login" aria-describedby="emailHelp" placeholder="Unesite korisničko ime">
                 </div>
                 <div class="form-group">
