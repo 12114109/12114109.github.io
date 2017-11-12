@@ -75,7 +75,7 @@
                 echo '
 
                  <div class="col-sm-4 portfolio-item">
-                <a class="portfolio-link" href="?lessons.php?category='.$id_category.'">
+                <a class="portfolio-link" href="#">
               <div class="caption">
                 <div class="caption-content">
                   <h5 style="clear-text">'.$category_name.'</h5>

@@ -18,6 +18,9 @@ switch ($link) {
     case "lesson":
         require ("lesson.php");
         break;
+    case "lessons":
+        require ("lessons.php");
+        break;
 
 default:
 require("main.php");
