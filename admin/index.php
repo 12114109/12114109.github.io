@@ -16,7 +16,7 @@ switch ($link) {
     case 'companies':
     	require("company.php");
     	break;
-    case 'instructor':
+    case 'instructors':
     	require("instructor.php");
     	break;
     default:

@@ -59,7 +59,7 @@
         else
         {
           $active = "<a class='btn btn-success btn-lg btn-block' href='activate_company.php?link=activate&id=".$id_company."'> Aktivacija " . $name . " </a>";
-          $active .= "<a class='btn btn-danger btn-lg btn-block' href='activate_company.php?link=delete&id=".$id_company."'> Obriši " . $name . " </a>";
+          $active .= "<a class='btn btn-danger btn-lg btn-block' href='delete_company.php?link=delete&id=".$id_company."'> Obriši " . $name . " </a>";
         }
 
          echo "
