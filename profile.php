@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Pops
- * Date: 11.11.2017.
- * Time: 22.48
- */
+$type=$_SESSION['type'];
+$username=$_SESSION['username'];
+
+switch ($type){
+    case "attendant":
+        include ('attendant.php');
+}

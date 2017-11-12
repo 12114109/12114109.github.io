@@ -22,6 +22,7 @@ if(is_numeric($id_user))
 {
     $_SESSION['id_user'] = $id_user;
     $_SESSION['username'] = $username;
+    $_SESSION['type'] = $type;
     header("Location:index.php");
     exit();
 }
