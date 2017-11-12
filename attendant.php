@@ -29,6 +29,7 @@ require "db_config.php";
         $topicsOutput["topics"] = "";
     }
 
+    if(!empty($topicsOutput["topics"])) {
     $count = count($topicsOutput["topics"]);
     for ($i=0; $i<$count; $i++){
         $idTopic = $topicsOutput["topics"][$i]["id_topic"];
@@ -58,6 +59,9 @@ require "db_config.php";
                 </div>
             </div>
         </div>';
+    }
+    } else {
+        echo 'Nemate bodova sa predavanja.';
     }
 
 ?>

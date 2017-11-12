@@ -5,10 +5,7 @@ define("SECRET","@7sfekjsdngjkfshsgj#GFJHddsgjfshjkfhjk!");
 $link = "";
 if(isset($_GET['link']))
     $link = $_GET['link'];
-switch ($link) { 
-  case "lessons":
-      require("lessons.php");
-      break;
+switch ($link) {
   case "profile":
       require("profile.php");
       break;
@@ -18,6 +15,9 @@ switch ($link) {
   case "login":
       require ("login.php");
       break;
+    case "lesson":
+        require ("lesson.php");
+        break;
 
 default:
 require("main.php");

@@ -63,13 +63,13 @@ switch ($link) {
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Popularna predavanja</a>
+              <a class="nav-link js-scroll-trigger" href="index.php#portfolio">Popularna predavanja</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">O nama</a>
+              <a class="nav-link js-scroll-trigger" href="index.php#about">O nama</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
+              <a class="nav-link js-scroll-trigger" href="index.php#contact">Kontakt</a>
             </li>
             <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
