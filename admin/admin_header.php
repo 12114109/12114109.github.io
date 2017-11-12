@@ -1,27 +1,38 @@
 <?php
 session_start();
 
-$link = "";
+if(isset($_SESSION['admin_session']))
+{
+
+    $link = "";
 if(isset($_GET['link']))
     $link = $_GET['link'];
+  
 switch ($link) {
     case "lessons":
         $page_title="Sva predavanja";
         break;
-    case "login":
-        $page_title="Uloguj se";
+    case "companies":
+        $page_title="Sve kompanije";
         break;
-    case "register":
-        $page_title="Registruj se";
-        break;
-    case "profile":
-        $page_title="Moj profil";
+    case "instructors":
+        $page_title="Svi instruktori";
         break;
     default:
-        $page_title="Početna";
+         require("admin_main.php");
+         $page_title = "Home";
         break;
 }
+
+}
+else
+{
+      $page_title="Ulogujte se";
+       
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,18 +43,18 @@ switch ($link) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?= $page_title ?> </title>
+    <title> <?= $page_title ?> </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/freelancer.css" rel="stylesheet">
+    <link href="../css/freelancer.css" rel="stylesheet">
 
   </head>
   
@@ -52,25 +63,33 @@ switch ($link) {
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-      <a  class="hidden-sm-down" class="navbar-brand js-scroll-trigger" href="index.php">
-        <img  src="./img/logo.png" width="50" height="50" alt="logo">
-        </a>
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Usavrši me</a>
+        <a class="navbar-brand js-scroll-trigger" href="index.php">Usavrši me</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Meni
           <i class="fa fa-bars"></i>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+           
+           <?php if (isset($_SESSION['admin_session'])) {
+            ?>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Popularna predavanja</a>
+              <a class="nav-link js-scroll-trigger" href="?link=companies">Lista kompanija</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">O nama</a>
+              <a class="nav-link js-scroll-trigger" href="?link=instructors">Lista instruktora</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
+              <a class="nav-link js-scroll-trigger" href="?link=lessons">Lista predavanja</a>
             </li>
+            <?php
+
+              }
+
+             ?>
+
+
             <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Nalog
@@ -78,13 +97,11 @@ switch ($link) {
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <?php
           //If user is not logged in
-          if(!isset($_SESSION['id_user']))
+          if(!isset($_SESSION['admin_session']))
           {
             ?>
 
-            <a style="cursor: pointer; " class="dropdown-item login_button_modal" data-target="#loginmodal" data-toggle="modal">Prijava</a>
-            <a style="cursor: pointer; " class="dropdown-item register_button_modal" data-target="#registrationmodal" data-toggle="modal" >Registracija</a>
-
+            <a style="cursor: pointer; " class="dropdown-item login_button_modal" href="?link=login">Prijava</a>
         <?php
           }
 
@@ -93,8 +110,7 @@ switch ($link) {
             // If user is logged in
             ?>
 
-             <a class="dropdown-item" href="logout.php">Odjavi se</a>
-             <a class="dropdown-item" href="index.php?link=profile">Moj profil</a>
+             <a class="dropdown-item" href="admin_logout.php">Odjavi se</a>
 
             <?php
 
@@ -109,4 +125,3 @@ switch ($link) {
         </div>
       </div>
     </nav>
-

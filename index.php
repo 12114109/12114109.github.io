@@ -6,8 +6,8 @@ $link = "";
 if(isset($_GET['link']))
     $link = $_GET['link'];
 switch ($link) { 
-  case "lessions":
-      require("lessions.php");
+  case "lessons":
+      require("lessons.php");
       break;
   case "profile":
       require("profile.php");

@@ -48,3 +48,28 @@ function check_login_user($username,$type,$password)
 
     return $id_user;
 }
+
+
+function check_login_admin($username,$password)
+{
+    $SALT1 = "skjdghjdhskdgsshkgdhkgdkj";
+    $SALT2 = "isdjghgsjdk8795njrgh9734h";
+
+    global $connection;
+    $password_temp = $SALT1.$password.$SALT2;
+    $id_user = false;
+
+    $sql = "SELECT id_startit_center FROM startit_center
+            WHERE username = '$username' AND password = MD5('$password_temp')";
+
+
+    $result = mysqli_query($connection,$sql) or die(mysqli_error($connection));
+
+    if (mysqli_num_rows($result)>0) {
+        while($record = mysqli_fetch_array($result,MYSQLI_ASSOC))
+            $id_user = $record['id_startit_center'];
+    }
+
+    return $id_user;
+}
+

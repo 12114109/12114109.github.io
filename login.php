@@ -5,7 +5,6 @@ require("functions.php");
 
 $username = '';
 $password = '';
-$type = '';
 
 if(isset($_POST['username']))
     $username = mysqli_real_escape_string($connection,trim($_POST["username"]));
@@ -16,7 +15,7 @@ if(isset($_POST['password']))
 if(isset($_POST['type']))
     $type = mysqli_real_escape_string($connection,trim($_POST["type"]));
 
-$id_user = check_login_user($username,$type,$password);
+$id_user = check_login_user($username,$password);
 
 if(is_numeric($id_user))
 {
