@@ -9,4 +9,7 @@ switch ($type){
     case "instructor":
         include ('instructor.php');
         break;
+    case "company":
+        include ('company.php');
+        break;
 }
